@@ -1,0 +1,89 @@
+body{font-family:'Segoe UI',Tahoma,Verdana,sans-serif; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;}
+.kitchen-header{background:linear-gradient(135deg,#ff6b35,#f7931e);color:#fff;padding:1rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(0,0,0,0.1);}
+.kitchen-header h1{font-size:1.5rem;display:flex;align-items:center;}
+.kitchen-header h1 i{margin-right:10px;}
+.connection-status{font-size:0.9rem;padding:0.5rem 1rem;border-radius:50px;font-weight:bold;color:#fff;}
+.connection-status.connected{background-color:#28a745;}
+.connection-status.disconnected{background-color:#dc3545;}
+.kitchen-main{padding:2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;}
+.kot-ticket{background:#fff;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);display:flex;flex-direction:column;overflow:hidden;transition:transform 0.2s ease,box-shadow 0.2s ease;border-left:6px solid #ffc107;}
+.kot-ticket:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,0.2);}
+.kot-header{background:#f8f9fa;padding:1rem;border-bottom:1px solid #e9ecef;display:flex;justify-content:space-between;font-weight:bold;font-size:1rem;}
+.kot-items-list{list-style:none;padding:1rem;margin:0;flex-grow:1;}
+.kot-items-list li{padding:0.3rem 0;border-bottom:1px dashed #ddd;}
+.kot-actions{display:flex;justify-content:flex-end;padding:0.5rem 1rem;}
+.kot-actions .btn{background:#28a745;color:#fff;padding:0.5rem 1rem;border:none;border-radius:5px;cursor:pointer;transition:background 0.2s;}
+.kot-actions .btn:hover{background:#218838;}
+.kitchen-notification{position:fixed;top:20px;right:20px;min-width:250px;padding:1rem;border-radius:10px;color:#fff;box-shadow:0 4px 15px rgba(0,0,0,0.2);z-index:9999;animation:slideIn 0.5s ease;}
+.kitchen-notification-info{background:#17a2b8;}
+.kitchen-notification-success{background:#28a745;}
+.kitchen-notification-error{background:#dc3545;}
+.kitchen-notification .notification-close{background:transparent;border:none;color:#fff;float:right;font-size:1.2rem;cursor:pointer;}
+@keyframes slideIn{0%{transform:translateX(100%);}100%{transform:translateX(0);}}
+/* --- Kitchen Buttons --- */
+.btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Serve One Button */
+.btn-serve-one {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.btn-serve-one:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Serve Entire Parcel Button */
+.btn-serve-parcel {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.btn-serve-parcel:hover {
+    background-color: #1e88e5;
+    transform: scale(1.05);
+}
+
+/* General Ready Button (used in your ticket footer) */
+.btn-ready {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Optional: add icon spacing if you use FontAwesome icons */
+.btn i {
+    margin-right: 6px;
+}
+
+/* KOT ticket buttons container */
+.kot-footer {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.kot-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}

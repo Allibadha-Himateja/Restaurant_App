@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Kitchen Display</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+    
+    <!-- Paths for a Separate Website Setup -->
+    <link rel="stylesheet" href="/style.css">
+    <script src="/config.js"></script>
+    <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+    <header class="kitchen-header">
+        <h1><i class="fas fa-utensils"></i> Kitchen Display System</h1>
+        <div id="connection-status" class="connection-status disconnected">Disconnected</div>
+    </header>
+    <main class="kitchen-main">
+        <div id="kot-display-area"></div>
+    </main>
+    <div id="notification-container"></div>
+</body>
+</html>
+

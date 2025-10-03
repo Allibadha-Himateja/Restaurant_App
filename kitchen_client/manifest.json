@@ -1,0 +1,16 @@
+{
+    "name": "Kitchen Display",
+    "short_name": "Kitchen",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#333333",
+    "theme_color": "#1a1a1a",
+    "description": "Kitchen Display System (KDS) for viewing pending orders.",
+    "icons": [
+        {
+            "src": "/icons/icons8-kitchen-96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ]
+}
