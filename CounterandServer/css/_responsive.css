@@ -1,0 +1,117 @@
+/* --- Print Styles --- */
+@media print {
+    body { color: #000; background-color: #fff; }
+    body.printing-bill .app-container, body.printing-bill .app-sidebar, body:not(.printing-bill) #bill-modal { display: none; }
+    body.printing-bill .modal-overlay { background-color: transparent; position: static; display: block; opacity: 1; visibility: visible; }
+    body.printing-bill .modal-content { box-shadow: none; border: none; width: 100%; max-width: 100%; border-radius: 0; background: #fff; }
+    body.printing-bill .modal-header, body.printing-bill .modal-footer { display: none; }
+    body.printing-bill .receipt { color: #000; text-align: center; }
+    body:not(.printing-bill) #bills-content, body:not(.printing-bill) #bills-content * { visibility: visible; }
+    body:not(.printing-bill) #bills-content { position: absolute; left: 0; top: 0; width: 100%; }
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 992px) {
+    .order-interface { grid-template-columns: 1fr; }
+    .order-summary { margin-top: 30px; }
+}
+@media (max-width: 768px) {
+    .app-header h1 { font-size: 1.2em; }
+    .app-sidebar { width: 220px; }
+    body.sidebar-open .app-container { left: 220px; }
+    .kot-ticket { width: 100%; }
+    .modal-content { width: 90%; }
+}
+@media (max-width: 480px) {
+    .app-header h1 { font-size: 1em; }
+    .app-sidebar { width: 200px; }
+    body.sidebar-open .app-container { left: 200px; }
+}
+/* --- Notification System Styles --- */
+
+/* This is the container that holds all notifications */
+#notification-container {
+    position: fixed; /* Keeps it on screen even when scrolling */
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Ensures it appears above all other content */
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Individual notification pop-up */
+.notification {
+    position: relative; /* Needed for the timer bar */
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+    border-left: 5px solid #3498db; /* Default color (info) */
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    overflow: hidden; /* Keeps the timer bar inside the rounded corners */
+}
+
+/* Styles for different notification types */
+.notification.success {
+    border-left-color: #28a745; /* Green */
+}
+
+.notification.error {
+    border-left-color: #dc3545; /* Red */
+}
+
+.notification.warning {
+    border-left-color: #ffc107; /* Yellow */
+}
+
+/* Animation for when the notification is removed */
+.notification.fade-out {
+    opacity: 0;
+    transform: translateX(120%); /* Moves it off-screen to the right */
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.notification p {
+    margin: 0;
+    color: #555;
+}
+
+.notification .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa;
+    padding: 0 5px;
+}
+
+/* The timer bar animation */
+.notification-timer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    animation: shrink 5s linear forwards;
+}
+
+@keyframes shrink {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}

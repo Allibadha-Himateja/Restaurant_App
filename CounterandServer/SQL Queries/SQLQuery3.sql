@@ -1,0 +1,1 @@
+delete from RestaurantCounter.dbo.Orders
